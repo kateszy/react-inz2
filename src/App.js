@@ -5,11 +5,12 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import DrawerButton from './components/SideDrawer/DrawerButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 
 class App extends Component {
- 
+
   state = {
     sideDrawerOpen: false
 
@@ -17,36 +18,37 @@ class App extends Component {
 
   sideDrawerHandler = () => {
     this.setState((prevState) => {
-      return{sideDrawerOpen: !prevState.sideDrawerOpen};
-    
-  });
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+
+    });
 
   };
 
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen:false});
+    this.setState({ sideDrawerOpen: false });
 
 
   }
-  render(){
+  render() {
     let backdrop;
 
-    if (this.state.sideDrawerOpen){
-      backdrop = <Backdrop click={this.backdropClickHandler}/>
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
     }
 
-  return (
-    <div style={{height:'100%'}}>
-    <Toolbar clickHandler={this.sideDrawerHandler}/>
-    <SideDrawer show={this.state.sideDrawerOpen} />
-    {backdrop}
-  <main style={{marginTop:'64px'}}>
-    <p> jdsnnd </p>
-  </main>
-  </div>
-
-  );
-}
+    return (
+      <MuiThemeProvider>
+        <div style={{ height: '100%' }}>
+          <Toolbar clickHandler={this.sideDrawerHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+          {backdrop}
+          <main style={{ marginTop: '64px' }}>
+            <p> jdsnnd </p>
+          </main>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;
