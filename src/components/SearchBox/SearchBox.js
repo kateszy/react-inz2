@@ -21,10 +21,7 @@ const SearchBox = ({isOpen, onClick, additionalStyles}) => {
             padding: 0,
             top: 0
         },
-        frame: {
-            border: 'solid 1px whitesmoke',
-            borderRadius: 5
-        }
+       
     };
     
     let textStyle = isOpen ? baseStyles.open : baseStyles.closed;

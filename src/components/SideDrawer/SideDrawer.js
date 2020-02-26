@@ -1,6 +1,10 @@
 import React from 'react';
 import './SideDrawer.css';
 import {BrowserRouter as Router, Link, NavLink, Route, Switch} from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faUser,faGift, faLongArrowAltRight} from "@fortawesome/free-solid-svg-icons";
+import {Form,FormControl} from 'react-bootstrap';
+
 
 const Home = () => <h1> Strona startowa </h1>;
 const Category = () => <h1> Kategorie </h1>;
@@ -21,17 +25,21 @@ const SideDrawer = props => {
         <Router>
     <nav className={drawerClasses}>         
        <ul>
-        <li><NavLink to="/" exact> Home </NavLink></li>
+        <li><NavLink to="/search"> <Form inline>
+    <FormControl type="text" placeholder="Czego szukasz?" className=" mr-sm-2" /></Form> </NavLink></li>
+        <li><NavLink to="/" exact> Produkty </NavLink></li>
         <li><NavLink to="/category"> Kategorie </NavLink></li>
         <li><NavLink to="/brands"> Marki </NavLink></li>
-        <li><NavLink to="/promotions"> Promocje </NavLink></li>
-        <li><NavLink to="/login"> Logowanie </NavLink></li>
-        <li><NavLink to="/cart"> Koszyk </NavLink></li>
+        <li><NavLink to="/promotions"><FontAwesomeIcon icon={faGift} /> Promocje <FontAwesomeIcon icon={faLongArrowAltRight} size="sm" /></NavLink></li>
+        <li><NavLink to="/login"> <FontAwesomeIcon icon={faUser} /> Logowanie <FontAwesomeIcon icon={faLongArrowAltRight} size="sm" /> </NavLink></li>        
         </ul>
-
-
+       
     </nav>
+   
+
+    
         <Switch> 
+        <Route path="/search" component={Category}/>    
         <Route path="/" exact component={Home}/>
         <Route path="/category" component={Category}/>
         <Route path="/brands" component={Brands}/>

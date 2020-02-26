@@ -3,7 +3,7 @@
     width: 100%;
     top:0;
     left:0;
-    background: rgb(185, 185, 185);
+    background: rgb(184, 184, 184);
     height: 58px;
 }
 
@@ -63,10 +63,11 @@ text-transform: uppercase;
 
 
 @media (max-width:768px){
-    .toolbar_nav-items, .toolbar_nav-items-right, .search {
+    .toolbar_nav-items, .toolbar_nav-items-right li:nth-child(2), .search {
         display: none;
     }
 }
+
 
 @media (min-width: 769px){
     .toolbar_button{

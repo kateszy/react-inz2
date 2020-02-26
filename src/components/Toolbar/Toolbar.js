@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-rou
 import './Toolbar.css';
 import DrawerButton from '../SideDrawer/DrawerButton';
 import { render } from '@testing-library/react';
-import { Form, FormControl, Button, Container, Col, Row } from 'react-bootstrap';
-import { faHome, faShoppingCart, faUser, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Container, Col, Row } from 'react-bootstrap';
+import { faHome, faShoppingCart, faUser, faSearch, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBox from '../SearchBox/SearchBox';
 import SearchBoxAnimation from '../SearchBox/SearchBoxAnimation';
@@ -15,6 +15,7 @@ const Brands = () => <h1> Marki  </h1>;
 const Promotions = () => <h1> Promocje </h1>;
 const Login = () => <h1> Login </h1>;
 const Cart = () => <h1> Koszyk </h1>;
+const Fav = () => <h1> Fav </h1>;
 const ErrorPage = () => <h1> Strona nie istnieje  </h1>
 const ExpandingSearchBox = SearchBoxAnimation(SearchBox);
 
@@ -59,10 +60,13 @@ const Toolbar = props => {
               <Col xs lg="1">
                 <div className="toolbar_nav-items-right" >
                   <ul>
+                  <li><NavLink to="/fav">  <FontAwesomeIcon icon={faHeart} /> </NavLink></li>
                     <li><NavLink to="/login">
                       <FontAwesomeIcon icon={faUser} />
                     </NavLink></li>
+                   
                     <li><NavLink to="/cart">  <FontAwesomeIcon icon={faShoppingCart} /> </NavLink></li>
+                    
                   </ul>
                 </div>
               </Col>
@@ -76,6 +80,7 @@ const Toolbar = props => {
               <Route path="/promotions" component={Promotions} />
               <Route path="/login" component={Login} />
               <Route path="/cart" component={Cart} />
+              <Route path="/fav" component={Fav} />
               <Route component={ErrorPage} />
             </Switch>
 
