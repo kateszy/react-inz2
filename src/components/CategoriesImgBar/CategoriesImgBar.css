@@ -1,0 +1,28 @@
+.mw100{
+    top:0;
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    overflow: hidden;
+   
+    
+}
+
+.imageMax {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    opacity: 0.85;
+    
+       
+}
+
+@media (max-width:768px){
+    .mw100,.imageMax{
+        display:none;
+    }
+}
+

@@ -2,21 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
 import './Toolbar.css';
 import DrawerButton from '../SideDrawer/DrawerButton';
-import { render } from '@testing-library/react';
 import { Container, Col, Row } from 'react-bootstrap';
-import { faHome, faShoppingCart, faUser, faSearch, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShoppingCart, faUser, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBox from '../SearchBox/SearchBox';
 import SearchBoxAnimation from '../SearchBox/SearchBoxAnimation';
 
-const Home = () => <h1> Strona startowa </h1>;
-const Category = () => <h1> Kategorie </h1>;
-const Brands = () => <h1> Marki  </h1>;
-const Promotions = () => <h1> Promocje </h1>;
-const Login = () => <h1> Login </h1>;
-const Cart = () => <h1> Koszyk </h1>;
-const Fav = () => <h1> Fav </h1>;
-const ErrorPage = () => <h1> Strona nie istnieje  </h1>
+
+
+
 const ExpandingSearchBox = SearchBoxAnimation(SearchBox);
 
 const Toolbar = props => {
@@ -26,7 +20,6 @@ const Toolbar = props => {
     <Container>
       <Row>
         <header className="toolbar">
-          <Router>
 
             <nav className="toolbar_nav">
 
@@ -71,20 +64,6 @@ const Toolbar = props => {
                 </div>
               </Col>
             </nav>
-
-
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/category" component={Category} />
-              <Route path="/brands" component={Brands} />
-              <Route path="/promotions" component={Promotions} />
-              <Route path="/login" component={Login} />
-              <Route path="/cart" component={Cart} />
-              <Route path="/fav" component={Fav} />
-              <Route component={ErrorPage} />
-            </Switch>
-
-          </Router>
         </header>
       </Row>
     </Container>

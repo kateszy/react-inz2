@@ -3,9 +3,17 @@
     width: 100%;
     top:0;
     left:0;
-    background: rgb(184, 184, 184);
+    background: transparent;
     height: 58px;
+    z-index: 200;
+    
 }
+.toolbar:hover{
+    background: rgb(65, 65, 65);
+    transition: all 0.3s linear .1s;
+    
+}
+
 
 
 .toolbar_nav{
@@ -76,4 +84,10 @@ text-transform: uppercase;
     .toolbar_logo{
         margin-left: 0;
     }
+}
+@media (max-width:768px){
+.toolbar{
+    background: rgb(65, 65, 65);
+}
+
 }

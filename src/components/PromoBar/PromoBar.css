@@ -1,0 +1,29 @@
+.Promo{
+    
+    max-width: 100%;   
+    overflow: hidden;
+    padding-top: 100px;
+    
+
+}
+
+.PromoCol{
+   
+    overflow: hidden;    
+    opacity: 0.85;
+    text-align: center;
+    border-right: 1px solid #e6e6e6;
+    
+}
+
+ .PromoCol h4{
+     padding: 20px;
+     padding-top: 30px;
+ }
+
+ 
+@media (max-width:768px){
+    .Promo{
+        display:none;
+    }
+}

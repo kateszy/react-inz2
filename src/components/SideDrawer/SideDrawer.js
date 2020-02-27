@@ -6,14 +6,14 @@ import {faUser,faGift, faLongArrowAltRight} from "@fortawesome/free-solid-svg-ic
 import {Form,FormControl} from 'react-bootstrap';
 
 
-const Home = () => <h1> Strona startowa </h1>;
+// const Home = () => {};
 const Category = () => <h1> Kategorie </h1>;
 const Brands = () => <h1> Marki  </h1>;
 const Promotions = () => <h1> Promocje </h1>;
 const Login = () => <h1> Login </h1>;
 const Cart = () => <h1> Koszyk </h1>;
 
-const ErrorPage = () => <h1> Strona nie istnieje  </h1>
+// const ErrorPage = () => <h1> Strona nie istnieje  </h1>
 const SideDrawer = props => {
 
     let drawerClasses = 'side_drawer';
@@ -28,9 +28,9 @@ const SideDrawer = props => {
         <li><NavLink to="/search"> <Form inline>
     <FormControl type="text" placeholder="Czego szukasz?" className=" mr-sm-2" /></Form> </NavLink></li>
         <li><NavLink to="/" exact> Produkty </NavLink></li>
-        <li><NavLink to="/category"> Kategorie </NavLink></li>
+        <li><NavLink to="/category"> Kolekcje </NavLink></li>
         <li><NavLink to="/brands"> Marki </NavLink></li>
-        <li><NavLink to="/promotions"><FontAwesomeIcon icon={faGift} /> Promocje <FontAwesomeIcon icon={faLongArrowAltRight} size="sm" /></NavLink></li>
+        <li><NavLink to="/promotions"><FontAwesomeIcon icon={faGift} /> Promocje </NavLink></li>
         <li><NavLink to="/login"> <FontAwesomeIcon icon={faUser} /> Logowanie <FontAwesomeIcon icon={faLongArrowAltRight} size="sm" /> </NavLink></li>        
         </ul>
        
@@ -40,13 +40,13 @@ const SideDrawer = props => {
     
         <Switch> 
         <Route path="/search" component={Category}/>    
-        <Route path="/" exact component={Home}/>
+        {/* <Route path="/" exact component={Home}/> */}
         <Route path="/category" component={Category}/>
         <Route path="/brands" component={Brands}/>
         <Route path="/promotions" component={Promotions}/>
         <Route path="/login" component={Login}/>
         <Route path="/cart" component={Cart}/>
-        <Route component ={ErrorPage}/>
+        {/* <Route component ={ErrorPage}/> */}
         </Switch>
     </Router>
     );
