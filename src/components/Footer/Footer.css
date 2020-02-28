@@ -1,0 +1,64 @@
+.Footer-items{
+
+    
+    max-width: 100%;  
+    height: 55vh; 
+    overflow: hidden;
+    background-color: rgb(65, 65, 65);
+    margin-top: 4vh;  
+    padding-left: 20vh;  
+    font-size: 16px;
+    bottom: 0;
+}
+
+
+.FtCol{
+
+    
+    overflow: hidden;    
+    opacity: 0.85;
+    text-align: left;
+    padding: 10vh 20vh 5vh 10vh;
+    color: whitesmoke;
+    white-space: nowrap;
+    
+
+}
+
+
+h5{
+
+    padding-bottom: 3vh;
+    
+}
+
+.FtCol p{
+
+    color: rgb(202, 255, 202);
+
+}
+
+div#footer-it1{
+    width: 30%;
+    float: left;
+    padding-right: 10vh;
+    
+     
+}
+
+
+div#footer-it2{
+    width: 70%;
+    float:left;
+
+}
+
+#media{
+    padding-right: 2vh;
+}
+
+@media (max-width:768px){
+    .Footer-items{
+        display:none;
+    }
+}

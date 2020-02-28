@@ -17,7 +17,35 @@
     overflow: hidden;
     opacity: 0.85;
     
+    transform: scale(1.2,1.2);
+    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    -webkit-transform: scale(1.2,1.2);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 200ms;
+    -moz-transform: scale(1.2,1.2);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 200ms;
        
+}
+
+
+
+.imageMax:hover{
+
+    transform: scale(1,1);
+    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 200ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 200ms;
+    position: relative;
+
+    
+    
 }
 
 @media (max-width:768px){

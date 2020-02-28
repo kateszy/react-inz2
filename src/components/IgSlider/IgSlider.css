@@ -1,0 +1,24 @@
+.IgSldr{
+
+    top:0;
+    min-width: 100%;
+    max-width: 100%;   
+    overflow: hidden;
+    opacity: 0.9;
+    padding: 0px;
+
+}
+
+.IgCol img{
+
+    width:  40vh;    
+    height: 33vh;
+    overflow: hidden;
+    
+}
+
+@media (max-width:993px){
+    .IgSldr{
+        display:none;
+    }
+}

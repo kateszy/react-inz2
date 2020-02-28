@@ -59,5 +59,12 @@ transform:translateX(0);
 
 }    
 
+@media (max-width: 770px){
+    .side_drawer {
+        display:none;
+    }
+
+}   
+
 
 
