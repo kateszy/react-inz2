@@ -5,22 +5,25 @@ import g2 from '../images/g2.jpg';
 import g3 from '../images/g3.jpg';
 import g4 from '../images/g4.jpg';
 import './CategoriesImgBar.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+
 
 const CategoriesImgBar = props => {
 
-    return(   
-       <Container className="mw100">            
-            <Row> 
-           
-                <Col xs lg="3" className="mw100"> <img class="imageMax" src={g4} /></Col>
-                <Col xs lg="3" className="mw100"> <img class="imageMax" src={g2} /></Col>
-                <Col xs lg="3" className="mw100"><img class="imageMax" src={g3} /></Col>
-                <Col xs lg="3" className="mw100"> <img class="imageMax" src={g1} /></Col>
-               
-            </Row>            
+    return (
+        <Container className="mw100">
+            <Row>
+
+                <Col xs lg="3" className="mw200"> <img className="cat" src={g4} /> <h2> Czapki </h2> <small> shop <FontAwesomeIcon icon={faLongArrowAltRight} color="rgb(202, 255, 202)" ho className="arrow"/></small> </Col>
+                <Col xs lg="3" className="mw200"> <img className="cat" src={g2} /> <h2> Buty </h2><small> shop <FontAwesomeIcon icon={faLongArrowAltRight} color="rgb(202, 255, 202)" className="arrow"/></small></Col>
+                <Col xs lg="3" className="mw200"><img className="cat" src={g3} /> <h2> Spodnie </h2><small> shop <FontAwesomeIcon icon={faLongArrowAltRight} color="rgb(202, 255, 202)" className="arrow"/></small></Col>
+                <Col xs lg="3" className="mw200"> <img className="cat" src={g1} /> <h2> Bluzy </h2><small> shop <FontAwesomeIcon icon={faLongArrowAltRight} color="rgb(202, 255, 202)"className="arrow" /></small></Col>
+
+            </Row>
         </Container>
 
-);
+    );
 
 
 };

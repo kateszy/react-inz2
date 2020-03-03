@@ -39,6 +39,7 @@ class App extends Component {
     }
 
     return (
+    
       <MuiThemeProvider>
         <Router>
           <Toolbar clickHandler={this.sideDrawerHandler} />
@@ -47,6 +48,7 @@ class App extends Component {
           <MainMiddleComponent/>
         </Router>
       </MuiThemeProvider>
+     
     );
   }
 }

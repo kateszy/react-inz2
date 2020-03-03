@@ -20,7 +20,8 @@ const IgSlider = props => {
                 <Col xs lg="2" className="IgCol"><img src={i4} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i5} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i6} /></Col>        
-            </Row>
+            </Row>            
+            <div><h1>Dołącz do nas!</h1></div>
             <Row>
                 <Col xs lg="2" className="IgCol"><img src={i6} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i5} /></Col>                

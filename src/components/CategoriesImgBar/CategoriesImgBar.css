@@ -5,11 +5,77 @@
     margin: 0px;
     height: 100vh;
     overflow: hidden;
-   
     
 }
 
-.imageMax {
+.mw200{
+
+    top:0;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    overflow: hidden;
+
+}
+ h2{
+   top: 50%;
+   display: block;
+   position: absolute;
+   width: 100%;   
+   text-align: center;
+   color: transparent;
+   -webkit-text-stroke-width: 1.2px;
+   -webkit-text-stroke-color: #fff;
+    font-size: 3rem;
+    line-height: 3.75rem;
+
+    -webkit-transition: font-size 500ms;
+       -moz-transition: font-size 500ms;
+         -o-transition: font-size 500ms;
+            transition: font-size 500ms;
+    
+   
+}
+
+
+
+small{
+    top: 60%;
+    padding-top: 1vh;
+    display: block;
+    position: absolute;
+    width: 100%;    
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+
+    -webkit-transition: font-size 500ms;
+    -moz-transition: font-size 500ms;
+      -o-transition: font-size 500ms;
+         transition: font-size 500ms;
+
+
+}
+.mw200:hover h2 {
+    
+    font-size: 4rem;    
+    -webkit-transition: font-size 500ms;
+       -moz-transition: font-size 500ms;
+         -o-transition: font-size 500ms;
+            transition: font-size 500ms;
+
+}
+
+.mw200:hover small{
+
+    font-size: 2rem;    
+    -webkit-transition: font-size 500ms;
+       -moz-transition: font-size 500ms;
+         -o-transition: font-size 500ms;
+            transition: font-size 500ms;
+}
+
+.mw200 img {
     max-width: 100%;
     min-width: 100%;
     min-height: 100%;
@@ -17,36 +83,60 @@
     overflow: hidden;
     opacity: 0.85;
     
-    transform: scale(1.2,1.2);
+    
+    
+    transform: scale(1.3,1.3);
     transition-timing-function: ease-out;
-    transition-duration: 200ms;
-    -webkit-transform: scale(1.2,1.2);
+    transition-duration: 500ms;
+    -webkit-transform: scale(1.3,1.3);
     -webkit-transition-timing-function: ease-out;
-    -webkit-transition-duration: 200ms;
-    -moz-transform: scale(1.2,1.2);
+    -webkit-transition-duration: 500ms;
+    -moz-transform: scale(1.3,1.3);
     -moz-transition-timing-function: ease-out;
-    -moz-transition-duration: 200ms;
-       
+    -moz-transition-duration: 500ms;
+    
 }
 
 
 
-.imageMax:hover{
 
+.mw200:hover img{
+
+    
     transform: scale(1,1);
     transition-timing-function: ease-out;
-    transition-duration: 200ms;
+    transition-duration: 500ms;
     -webkit-transform: scale(1,1);
     -webkit-transition-timing-function: ease-out;
-    -webkit-transition-duration: 200ms;
+    -webkit-transition-duration: 500ms;
     -moz-transform: scale(1,1);
     -moz-transition-timing-function: ease-out;
-    -moz-transition-duration: 200ms;
+    -moz-transition-duration: 500ms;
     position: relative;
 
     
     
 }
+
+
+
+.mw200:hover svg{
+ 
+    animation: slide1 1s ease-in-out infinite;
+    
+}
+
+@keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+  }
+  
 
 @media (max-width:768px){
     .mw100,.imageMax{
