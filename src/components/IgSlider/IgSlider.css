@@ -9,29 +9,15 @@
 
 }
 
+
 .IgCol img{
 
-    width:  40vh;    
-    height: 33vh;
-    overflow: hidden;
-    
+    width:  36vh;    
+    height: 34vh;       
 }
 
-.IgSldr h1{
-    z-index: 1;
-    
-    position: absolute;
-    color: transparent;
-    -webkit-text-stroke-width: 1.2px;
-    -webkit-text-stroke-color: #fff;
-     font-size: 3rem;
-     line-height: 3.75rem;
- 
-     -webkit-transition: font-size 500ms;
-        -moz-transition: font-size 500ms;
-          -o-transition: font-size 500ms;
-             transition: font-size 500ms;
-             
+.followus h1{
+  color: black;           
 }
 
 @media (max-width:993px){

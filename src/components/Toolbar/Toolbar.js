@@ -31,26 +31,26 @@ const Toolbar = props => {
               <div className="toolbar_nav-items">
                 <ul id="navigation">
                   <li><NavLink to="/" exact> <FontAwesomeIcon icon={faHome} /> </NavLink></li>
-                  <li> <NavLink to="/cart"> Produkty</NavLink> </li>
+                  <li> <NavLink to="/products"> Produkty</NavLink> </li>
                   <ul className="dropdown">
                   <li> Kategorie
 
                     <ul>
-                      <li><a href="#"> Czapki </a></li>
-                      <li><a href="#"> Buty </a></li>
-                      <li><a href="#"> Spodnie </a></li>
-                      <li><a href="#"> Bluzy</a></li>
+                      <li><a href="/products/hats"> Czapki </a></li>
+                      <li><a href="/products/shoes"> Buty </a></li>
+                      <li><a href="/products/trousers"> Spodnie </a></li>
+                      <li><a href="/products/tshirts"> Bluzy</a></li>
                     </ul>
                     
                   </li>
                   <li> Marki
 
                     <ul>
-                      <li><a href="#"> Adidas </a></li>
-                      <li><a href="#"> Nike </a></li>
-                      <li><a href="#"> Converse </a></li>
-                      <li><a href="#"> Vans </a></li>
-                      <li><a href="#"> New Balance </a></li>
+                      <li><a href="/brand/adidas"> Adidas </a></li>
+                      <li><a href="/brand/nike"> Nike </a></li>
+                      <li><a href="/brand/converse"> Converse </a></li>
+                      <li><a href="/brand/vans"> Vans </a></li>
+                      <li><a href="/brand/newBalance"> New Balance </a></li>
                     </ul>
                     
                   </li>

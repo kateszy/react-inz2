@@ -7,12 +7,15 @@ import i3 from '../images/i3.jpg';
 import i4 from '../images/i4.jpg';
 import i5 from '../images/i5.jpg';
 import i6 from '../images/i6.jpg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHashtag }  from "@fortawesome/free-solid-svg-icons";
 
 const IgSlider = props => {
 
     return( 
-
+        
         <Container className="IgSldr">
+            <div className="followus"> <FontAwesomeIcon icon={faHashtag} size="2x" id="media" /> <h1>Dołącz do nas!</h1> </div>
             <Row>
                 <Col xs lg="2" className="IgCol"><img src={i1} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i2} /></Col>                
@@ -21,7 +24,8 @@ const IgSlider = props => {
                 <Col xs lg="2" className="IgCol"><img src={i5} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i6} /></Col>        
             </Row>            
-            <div><h1>Dołącz do nas!</h1></div>
+            
+           
             <Row>
                 <Col xs lg="2" className="IgCol"><img src={i6} /></Col>
                 <Col xs lg="2" className="IgCol"><img src={i5} /></Col>                

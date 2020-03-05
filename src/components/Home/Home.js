@@ -15,7 +15,7 @@ const Home = props => {
         <PromoBar/>   
         <BrandsBar/>
         <IgSlider/>
-        <Footer/>
+        
         </div>
 
     );

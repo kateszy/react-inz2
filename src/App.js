@@ -9,13 +9,15 @@ import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import MainMiddleComponent from './components/MainMiddleComponent/MainMiddleComponent';
+import Footer from './components/Footer/Footer';
+import Cookie from "js-cookie"
 
 class App extends Component {
 
   
   state = {
-    sideDrawerOpen: false
-
+    sideDrawerOpen: false,
+    token: Cookie.get("token")
   };
 
   sideDrawerHandler = () => {
@@ -45,8 +47,10 @@ class App extends Component {
           <Toolbar clickHandler={this.sideDrawerHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
-          <MainMiddleComponent/>
+          <MainMiddleComponent token={this.state.token}/>
+          <Footer/>
         </Router>
+        
       </MuiThemeProvider>
      
     );
