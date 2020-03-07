@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,26 +10,22 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import MainMiddleComponent from './components/MainMiddleComponent/MainMiddleComponent';
 import Footer from './components/Footer/Footer';
-import Cookie from "js-cookie"
-
+import { CookiesProvider, withCookies} from 'react-cookie';
 class App extends Component {
-
-  
   state = {
     sideDrawerOpen: false,
-    token: Cookie.get("token")
   };
 
   sideDrawerHandler = () => {
     this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
 
     });
 
   };
 
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
+    this.setState({ sideDrawerOpen: false });
 
 
   }
@@ -41,20 +37,19 @@ class App extends Component {
     }
 
     return (
-    
-      <MuiThemeProvider>
-        <Router>
-          <Toolbar clickHandler={this.sideDrawerHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
-          <MainMiddleComponent token={this.state.token}/>
-          <Footer/>
-        </Router>
-        
-      </MuiThemeProvider>
-     
+      <CookiesProvider>
+        <MuiThemeProvider>
+          <Router>
+            <Toolbar clickHandler={this.sideDrawerHandler} cookies={this.props.cookies} />
+            <SideDrawer show={this.state.sideDrawerOpen} cookies={this.props.cookies} />
+            {backdrop}
+            <MainMiddleComponent cookies={this.props.cookies} />
+            <Footer />
+          </Router>
+        </MuiThemeProvider>
+      </CookiesProvider>
     );
   }
 }
 
-export default App;
+export default withCookies(App);

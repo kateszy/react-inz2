@@ -111,32 +111,35 @@ class SignUp extends Component {
       <div>
         <div className="all">
           <Container>
-                <div className="left">
+
+                <div className="formflex">
+                  <p className="txtform"> Rejestracja </p>
                   <form onSubmit={this.handleSubmit} noValidate>
-                    <label htmlFor="firstName"> Imie:
-                      <input type="text" id="firstName" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
+                    <label htmlFor="firstName"> 
+                      <input placeholder="Imię" type="text" id="firstName" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                     </label>
 
-                    <label htmlFor="lastName"> Nazwisko:
-                      <input type="text" id="lastName" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
+                    <label htmlFor="lastName"> 
+                      <input placeholder="Nazwisko" type="text" id="lastName" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                     </label>
 
-                    <label htmlFor="email"> E-mail:
-                      <input type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
+                    <label htmlFor="email"> 
+                      <input placeholder="E-mail" type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
                       {this.state.errors.email &&
                         <span> {this.messages.email_incorrect} </span>}
                     </label>
 
-                    <label htmlFor="password"> Haslo:
-                      <input type="password" id="password" name="password" value={this.state.pass} onChange={this.handleChange} />
+                    <label htmlFor="password"> 
+                      <input placeholder="Hasło" type="password" id="password" name="password" value={this.state.pass} onChange={this.handleChange} />
                       {this.state.errors.password &&
                         <span> {this.messages.password_incorrect} </span>}
                     </label>
-                    <button> Zarejestruj sie </button>
+                    <button>  Zarejestruj sie </button>
                   </form>
                   {this.state.message && <h3>{this.state.message}</h3>}
+                  </div>
 
-                </div>
+                
           </Container>
         </div>
 

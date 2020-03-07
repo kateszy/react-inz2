@@ -12,13 +12,13 @@ const ErrorPage = () => <h1> Strona nie istnieje  </h1>
 const Promotions = () => <h1> Promocje </h1>;
 const Cart = () => <h1> Koszyk </h1>;
 const MainMiddleComponent = props => {
-  
+    const {cookies} = props;
     return(      
      <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/brand" component={withRouter(props => <Products {...props}/>)} />
         <Route path="/promotions" component={Promotions} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={props => <Login cookies={cookies} {...props}/>} />
         <Route path="/signup" component={SignUp} />
         <Route path="/logout" component={Logout} />
         <Route path="/cart" component={Cart} />
@@ -26,8 +26,6 @@ const MainMiddleComponent = props => {
         <Route component={ErrorPage} />
       </Switch>
     );
-
-
 };
 
 

@@ -3,20 +3,14 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-rou
 import './Toolbar.css';
 import DrawerButton from '../SideDrawer/DrawerButton';
 import { Container, Col, Row } from 'react-bootstrap';
-import { faHome, faShoppingCart, faUser, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShoppingCart, faUser, faUserPlus, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Toolbar = props => {
-
-
   return (
-
-
     <Container>
-
       <Row>
         <header className="toolbar">
-
           <nav className="toolbar_nav">
             <div className="toolbar_button">
               <DrawerButton click={props.clickHandler} />
@@ -28,7 +22,7 @@ const Toolbar = props => {
                   <li> <NavLink to="/products"> Produkty</NavLink> </li>
                   <ul className="dropdown">
                     <li> Kategorie
-  
+
                     <ul>
                         <li><a href="/products/hats"> Czapki </a></li>
                         <li><a href="/products/shoes"> Buty </a></li>
@@ -38,7 +32,7 @@ const Toolbar = props => {
 
                     </li>
                     <li> Marki
-  
+
                     <ul>
                         <li><a href="/brand/adidas"> Adidas </a></li>
                         <li><a href="/brand/nike"> Nike </a></li>
@@ -58,27 +52,12 @@ const Toolbar = props => {
 
               </div>
             </Col>
-
-
             <div className="toolbar_nav-items-right" >
               <Col xs lg="1">
-
-                <ul>
-                  <li><NavLink to="/signup">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                  </NavLink></li>
-                  <li><NavLink to="/login">
-                    <FontAwesomeIcon icon={faUser} />
-                  </NavLink></li>
-
-                  <li><NavLink to="/cart">
-                    <FontAwesomeIcon icon={faShoppingCart} />
-                  </NavLink></li>
-
-                </ul>
-
+                <ToolbarRight cookies={props.cookies} />
               </Col>
             </div>
+
           </nav>
         </header>
 
@@ -88,5 +67,35 @@ const Toolbar = props => {
 
   );
 };
+
+const ToolbarRight = props => {
+  if (props.cookies.get("token")) {
+    return (
+      <ul>
+        <li><NavLink to="/cart">
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </NavLink></li>
+        <li><NavLink to="/logout">
+          <FontAwesomeIcon icon={faSignOutAlt} />
+        </NavLink></li>
+      </ul>
+    )
+  } else {
+    return (
+      <ul>
+        <li><NavLink to="/cart">
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </NavLink></li>
+        <li><NavLink to="/signup">
+          <FontAwesomeIcon icon={faUserPlus} />
+        </NavLink></li>
+        <li><NavLink to="/login">
+          <FontAwesomeIcon icon={faUser} />
+        </NavLink></li>
+      </ul>
+    )
+  }
+}
+
 
 export default Toolbar;

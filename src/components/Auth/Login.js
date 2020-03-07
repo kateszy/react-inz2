@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Auth.css';
 import { Container } from 'react-bootstrap';
-import Cookie from "js-cookie"
 
 class Login extends Component {
   
@@ -13,6 +12,12 @@ class Login extends Component {
       email: false,
       password: false,
       server: false,
+    }
+  }
+  componentWillMount(){
+    const token = this.props.cookies.get("token")
+    if(token){
+      window.location = '/';
     }
   }
 
@@ -42,7 +47,7 @@ class Login extends Component {
         })
       }).then((response) => response.json())
       .then((responseJson) => {
-        Cookie.set("token", responseJson.token);
+        this.props.cookies.set("token", responseJson.token);
         console.log("Token obtained")
       }).catch((error) => {
         console.error(error);
@@ -65,16 +70,17 @@ class Login extends Component {
       <div>
         <div className="all">
           <Container>
-                <div className="left">
+          <div className="formflex">
+          <p className="txtform"> Logowanie </p>
                   <form onSubmit={this.handleSubmit} noValidate>
-                    <label htmlFor="email"> E-mail:
-                      <input type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
+                    <label htmlFor="email"> 
+                      <input placeholder="E-mail" type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
                       {this.state.errors.email &&
                         <span> {this.messages.email_incorrect} </span>}
                     </label>
 
-                    <label htmlFor="password"> Hasło:
-                      <input type="password" id="password" name="password" value={this.state.pass} onChange={this.handleChange} />
+                    <label htmlFor="password"> 
+                      <input placeholder="Hasło" type="password" id="password" name="password" value={this.state.pass} onChange={this.handleChange} />
                       {this.state.errors.password &&
                         <span> {this.messages.password_incorrect} </span>}
                     </label>
@@ -83,8 +89,7 @@ class Login extends Component {
                   {this.state.message && <h3>{this.state.message}</h3>}
                 </div>
           </Container>
-        </div>
-
+        </div>  
       </div>
 
     );

@@ -11,7 +11,8 @@
    
 }
 
-.FooterFlex{   
+.FooterFlex{
+    padding:20px;  
     width:100%;   
     overflow: hidden;
     display: flex;

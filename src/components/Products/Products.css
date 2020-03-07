@@ -28,6 +28,11 @@
     
 }
 
+.card-title{
+    padding:10px;
+    color: rgb(238, 172, 121);
+}
+
 
 
 .imgcontainer:hover img {
