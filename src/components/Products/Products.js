@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button,Card, CardGroup} from 'react-bootstrap'
+import './Products.css';
 
 class Products extends React.Component {
 
@@ -22,20 +23,24 @@ class Products extends React.Component {
         this.loadData()
         const objects = this.state.data.map( (data) =>{
             return(
-                <CardGroup>
-                <Card key = {data._id} style={{ width: '18rem' }}>
+              
+                <CardGroup>                    
+                <Card key = {data._id}>               
                     <Card.Body>
-                        <Card.Img variant="top" src={data.productPic[0].img}  />
+                        <div className="imgcontainer">
+                        <Card.Img variant="top" src={data.productPic[0].img}/>  </div>                     
                         <Card.Title>{data.name}</Card.Title>
                         <Card.Text>{data.price} zł</Card.Text>
-                        
                     </Card.Body>
-                </Card>
+                    
+                </Card>                
                 </CardGroup>
+                
+               
             )
         }
         )
-        return (<div>
+        return (<div className="product">
             {objects}
         </div>)
     }

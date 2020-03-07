@@ -15,13 +15,14 @@ const BrandsBar = props => {
 
         <Container className="Brands">
             <Row>
-                <Col xs lg="2" className="BrandCol"><img src={adidas} /></Col>
-                <Col xs lg="2" className="BrandCol"><img src={nike} /></Col>                
-                <Col xs lg="2" className="BrandCol"><img src={converse} /></Col>
-                <Col xs lg="2" className="BrandCol"><img src={vans} /></Col>
-                <Col xs lg="2" className="BrandCol"><img src={newb} /></Col>
-                <Col xs lg="2" className="BrandCol"><img src={infinity} /></Col>
-                
+                <div className="Brandsflex">
+                <Col xs lg="2" className="BrandCol"><a href="/brand/adidas"><img src={adidas} /></a></Col>
+                <Col xs lg="2" className="BrandCol"><a href="/brand/nike"><img src={nike} /></a></Col>                
+                <Col xs lg="2" className="BrandCol"><a href="/brand/converse"><img src={converse} /></a></Col>
+                <Col xs lg="2" className="BrandCol"><a href="/brand/vans"><img src={vans} /></a></Col>
+                <Col xs lg="2" className="BrandCol"><a href="/brand/newBalance"><img src={newb} /></a></Col>
+                <Col xs lg="2" className="BrandCol"><a href="/products"><img src={infinity} /></a></Col>
+                </div>
         
             </Row>
         </Container>

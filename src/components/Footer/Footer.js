@@ -2,63 +2,64 @@ import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import './Footer.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneVolume, faMobileAlt, faEnvelope, faHashtag, faBell, faVideo}  from "@fortawesome/free-solid-svg-icons";
+import { faPhoneVolume, faEnvelope, faHashtag, faBell, faVideo, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = props => {
 
-    return( 
+    return (
 
         <Container className="Footer-items">
-            <Row>
-                <Col xs lg="4" className="FtCol">
-                <h5> Kontakt </h5>
+
+            
+                <Row>
+                <div className="FooterFlex">
+                    <Col xs lg="4" className="FtCol">
+                    <p class="ftitem-top"> Informacje </p>
+                       
+                       <p className="ftitem-bottomtwo"> Regulamin </p> 
+                       <p className="ftitem-bottomtwo">  Współpraca </p>
+                       <p className="ftitem-bottomtwo">  Pomoc </p>
+                       <p className="ftitem-bottomtwo">  O nas  </p>
+
+
+                        </Col>
+
+
+                    <Col xs lg="4" className="FtCol">
+                        <p className="logo"> OUTLETLLY </p>
+                            <FontAwesomeIcon icon={faHashtag} size="2x" id="media" />
+                            <FontAwesomeIcon icon={faBell} size="2x" id="media" />
+                            <FontAwesomeIcon icon={faVideo} size="2x" id="media" />
+                       
+                       <div className="about">
+                        <p className="aboutitems"> Made in Poland </p>
+                        <p className="ftitem-bottom"> with love </p>
+                        
+                        </div>
+                        
                     
-                        <div id="footer-it1">
-                   <FontAwesomeIcon icon={faPhoneVolume} size="2x" /></div>
-                   <div id="footer-it2">
-                    <h6> Telefon:</h6>
-                    <p> 00 000 00 00 </p>
-                    </div>
+                    </Col>
                     
-                    <div id="footer-it1">
-                    <FontAwesomeIcon icon={faMobileAlt} size="2x" /> </div>
+                    <Col xs lg="4" className="FtCol">
+                        <p className="ftitem-top"> Kontakt </p>
+                       
+                        <p className="ftitem-bottom"> Telefon </p>
+                        <p> +00 000 000 000</p> 
 
-                    <div id="footer-it2">
-                    <h6> Kom. </h6>
-                    <p> +00 000 000 000</p> </div>
 
-                    <div id="footer-it1">
-                    <FontAwesomeIcon icon={faEnvelope} size="2x" /> </div>
+                        <p className="ftitem-bottom"> E-mail </p>
+                        <p>  kontakt@mail.com </p>
 
-                    <div id="footer-it2">
-                    <h6> E-mail </h6>
-                    <p>  kontak@mail.com </p>
+                    </Col>
                     </div>
+                </Row>
+            
 
-                </Col>
-                <Col xs lg="4" className="FtCol">
-                <h5> Informacja i pomoc </h5>
-                <p> Informacja </p>
-                <p> Pomoc </p>
-                <p> Regulamin </p>
-                <p> Współpraca </p>
-                <p> O nas </p>
-                </Col>                
-                <Col xs lg="4" className="FtCol">
-                <h5> Społeczność </h5>
-                <p> Dołącz do nas! </p>
-                <FontAwesomeIcon icon={faHashtag} size="2x" id="media" />
-                <FontAwesomeIcon icon={faBell} size="2x" id="media" />
-                <FontAwesomeIcon icon={faVideo} size="2x" id="media"/>
-                
-                
-                
-               
-                </Col>   
-            </Row>
+
+
         </Container>
 
-);
+    );
 
 };
 

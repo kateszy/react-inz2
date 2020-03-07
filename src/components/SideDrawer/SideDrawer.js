@@ -1,33 +1,44 @@
 import React from 'react';
 import './SideDrawer.css';
-import {BrowserRouter as Router, Link, NavLink, Route, Switch} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUser,faGift, faLongArrowAltRight} from "@fortawesome/free-solid-svg-icons";
-import {Form,FormControl} from 'react-bootstrap';
+import { faUser, faUserPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 
-
-
-
-// const ErrorPage = () => <h1> Strona nie istnieje  </h1>
 const SideDrawer = props => {
 
     let drawerClasses = 'side_drawer';
-    if(props.show){
-        drawerClasses ='side_drawer open';
+    if (props.show) {
+        drawerClasses = 'side_drawer open';
     }
-    
+
     return (
-    <nav className={drawerClasses}>         
-       <ul>
-        <li><NavLink to="/" exact> Produkty </NavLink></li>
-        <li><NavLink to="/brand"> Marki </NavLink></li>
-        <li><NavLink to="/promotions"><FontAwesomeIcon icon={faGift} /> Promocje </NavLink></li>
-        <li><NavLink to="/login"> <FontAwesomeIcon icon={faUser} /> Logowanie <FontAwesomeIcon icon={faLongArrowAltRight} size="sm" /> </NavLink></li>        
-        </ul>
-       
-    </nav>
+        <nav className={drawerClasses}>
+            <ul>
+                <li><a href="/" exact> Strona główna </a></li>
+                <li><a href="/products/hats"> Czapki </a></li>
+                <li><a href="/products/shoes"> Koszulki </a></li>
+                <li><a href="/products/trousers"> Spodnie </a></li>
+                <li><a href="/products/tshirts"> Bluzy</a></li>
+                <li><a href="/promotions"> Promocje </a></li>
+                <div className="reverse">
+                <li><a href="/login"><NavLink to="/login">
+                    <FontAwesomeIcon icon={faUser} />
+                  </NavLink> Logowanie</a></li>
+                <li><a href="/signup"><NavLink to="/signup">
+                    <FontAwesomeIcon icon={faUserPlus} />
+                  </NavLink> Rejestracja </a></li>
+                  <li><a href="/card"><NavLink to="/cart">
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                  </NavLink> Koszyk </a></li>
+                </div>
+               
+                
+            </ul>
+
+
+        </nav>
     );
-    };
+};
 
 export default SideDrawer;

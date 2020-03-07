@@ -1,0 +1,42 @@
+.product{
+    text-align: center;
+}
+
+.card{
+    border: none;
+    padding-top: 100px;
+   
+}
+
+.card-group{
+  display: inline-table;
+}
+.imgcontainer{
+    width:  55vh;    
+    height: 60vh; 
+    
+    
+}
+
+.imgcontainer, img{
+    transition: 0.4s;
+    overflow: hidden;
+}
+.card-img-top{
+  width:100%;
+  height: 100%;
+    
+}
+
+
+
+.imgcontainer:hover img {
+    opacity: 0.8;
+    transform: scale(1.4)rotate(15deg);
+        
+}
+
+
+
+
+

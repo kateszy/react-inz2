@@ -22,14 +22,14 @@ class App extends Component {
 
   sideDrawerHandler = () => {
     this.setState((prevState) => {
-      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
 
     });
 
   };
 
   backdropClickHandler = () => {
-    this.setState({ sideDrawerOpen: false });
+    this.setState({sideDrawerOpen: false});
 
 
   }

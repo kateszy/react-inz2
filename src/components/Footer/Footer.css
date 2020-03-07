@@ -1,64 +1,86 @@
-.Footer-items{
-
-    
-    max-width: 100%;  
-    height: 55vh; 
-    overflow: hidden;
+.Footer-items{ 
+    max-width: 100%; 
+    min-width: 100%; 
     background-color: rgb(65, 65, 65);
-    margin-top: 4vh;  
-    padding-left: 20vh;  
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px; 
     font-size: 16px;
-    bottom: 0;
+    text-align: center;
+    color: rgb(185, 185, 185);
+   
 }
 
+.FooterFlex{   
+    width:100%;   
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .FtCol{
-
     
-    overflow: hidden;    
-    opacity: 0.85;
-    text-align: left;
-    padding: 10vh 20vh 0vh 10vh;
-    color: whitesmoke;
-    white-space: nowrap;
-    
-
-}
-
-
-h5{
-
-    padding-bottom: 3vh;
+    width:100%;
     
 }
 
-.FtCol p{
-
-    color: rgb(202, 255, 202);
-
-}
-
-div#footer-it1{
-    width: 30%;
-    float: left;
-    padding-right: 10vh;
+p.logo {
     
-     
+    color: transparent;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: rgb(255, 241, 223);
+     font-size: 2rem;
+    
 }
 
 
-div#footer-it2{
-    width: 70%;
-    float:left;
-
+#media {
+    padding-right: 10px;
+    color: rgb(148, 197, 167);
 }
 
-#media{
-    padding-right: 2vh;
+p.aboutitems{
+    font-size: 18px;
+
+}
+.about{
+    padding: 20px;
 }
 
-@media (max-width:768px){
-    .Footer-items{
+.ftitem-top{
+    font-size: 1.5rem;
+    color: rgb(235, 235, 235);
+    padding-top: 2vh;
+}
+
+.ftitem-bottom{
+    color: rgb(148, 197, 167);
+    padding-bottom: 0;
+}
+
+@media screen and (max-width: 960px){
+    .FooterFlex .FtCol {
+        flex: 50%;      
+    }
+    .FtCol:nth-child(2){
+        display:none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .FooterFlex .FtCol {
+        flex: 50%;      
+    }
+    .FtCol:nth-child(2){
+        display:none;
+    }
+}
+@media screen and (max-width: 527px){
+    .FooterFlex .FtCol {
+        flex: 100%;      
+    }
+
+    .FtCol:nth-child(2){
         display:none;
     }
 }

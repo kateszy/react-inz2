@@ -73,7 +73,7 @@ class Login extends Component {
                         <span> {this.messages.email_incorrect} </span>}
                     </label>
 
-                    <label htmlFor="password"> Haslo:
+                    <label htmlFor="password"> Hasło:
                       <input type="password" id="password" name="password" value={this.state.pass} onChange={this.handleChange} />
                       {this.state.errors.password &&
                         <span> {this.messages.password_incorrect} </span>}

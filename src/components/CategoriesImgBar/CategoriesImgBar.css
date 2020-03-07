@@ -1,11 +1,18 @@
 .mw100{
     top:0;
     max-width: 100%;
+    min-width: 100%;
     padding: 0px;
-    margin: 0px;
-    height: 100vh;
-    overflow: hidden;
+    margin: 0px;   
+    overflow: hidden; 
     
+}
+
+.Catflex {
+  
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap-reverse;
 }
 
 .mw200{
@@ -17,6 +24,7 @@
     overflow: hidden;
 
 }
+
  h2{
    top: 50%;
    display: block;
@@ -138,9 +146,32 @@ small{
   }
   
 
-@media (max-width:768px){
-    .mw100,.imageMax{
-        display:none;
+  @media screen and (max-width: 960px){
+     .Catflex .mw200 {
+      flex: 50%; 
     }
-}
-
+   
+  }
+  @media screen and (max-width: 1000px){
+    
+     .Catflex .mw200 {
+      flex: 50%;
+      
+    }
+   
+  }
+  
+  @media screen and (max-width: 768px){
+     .Catflex .mw200{
+      flex: 50%;   
+    }
+   
+  }
+  
+  @media screen and (max-width: 480px){
+     .Catflex .mw200{
+      flex: 100%;
+  
+    }
+   
+  }

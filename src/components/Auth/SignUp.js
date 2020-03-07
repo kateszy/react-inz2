@@ -113,11 +113,11 @@ class SignUp extends Component {
           <Container>
                 <div className="left">
                   <form onSubmit={this.handleSubmit} noValidate>
-                    <label htmlFor="firstName"> Imien:
+                    <label htmlFor="firstName"> Imie:
                       <input type="text" id="firstName" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                     </label>
 
-                    <label htmlFor="lastName"> Nazwizgo:
+                    <label htmlFor="lastName"> Nazwisko:
                       <input type="text" id="lastName" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                     </label>
 

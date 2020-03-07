@@ -10,6 +10,7 @@ const PromoBar = props => {
 
         <Container className="Promo">
             <Row>
+            <div className="Promoflex">
                 <Col xs lg="3" className="PromoCol">  <FontAwesomeIcon icon={faCoins} size="3x" />
                     <h4> Program lojalnościowy </h4>
                     <p> SuperClub to nasz program lojalnościowy! Skontaktuj sie z nami mailowo 
@@ -28,7 +29,7 @@ const PromoBar = props => {
                 <Col xs lg="3" className="PromoCol"> <FontAwesomeIcon icon={faUndo} size="3x"/><h4> 14 dni na zwrot zakupów </h4>
                     <p> Na zwrot zakupionych produktów masz 14 dni licząc od daty otrzymania przesyłki.
                     </p></Col>
-
+            </div>
             </Row>
         </Container>
 
