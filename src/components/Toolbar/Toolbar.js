@@ -72,9 +72,9 @@ const ToolbarRight = props => {
   if (props.cookies.get("token")) {
     return (
       <ul>
-        <li><NavLink to="/cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </NavLink></li>
+        <li>
+          <CartToolbar />
+        </li>
         <li><NavLink to="/logout">
           <FontAwesomeIcon icon={faSignOutAlt} />
         </NavLink></li>
@@ -83,9 +83,7 @@ const ToolbarRight = props => {
   } else {
     return (
       <ul>
-        <li><NavLink to="/cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </NavLink></li>
+        <li><CartToolbar /></li>
         <li><NavLink to="/signup">
           <FontAwesomeIcon icon={faUserPlus} />
         </NavLink></li>
@@ -97,5 +95,17 @@ const ToolbarRight = props => {
   }
 }
 
+const CartToolbar = props => {
+  var cartAmount = 0
+  if(JSON.parse(localStorage.getItem('cart'))){
+    cartAmount = JSON.parse(localStorage.getItem('cart')).length
+  }
+  return (
+    <NavLink to="/cart">
+      <FontAwesomeIcon icon={faShoppingCart} />
+      {cartAmount}
+    </NavLink>
+  )
+}
 
 export default Toolbar;

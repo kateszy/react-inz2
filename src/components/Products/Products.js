@@ -1,13 +1,17 @@
 import React from 'react'
 import { Card, CardGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-
 import './Products.css';
 
 class Products extends React.Component {
 
     state = {
         data: []
+    }
+
+    constructor(props){
+        super(props)
+        this.loadData()
     }
 
     loadData() {
@@ -22,23 +26,9 @@ class Products extends React.Component {
     }
 
     render() {
-        this.loadData()
-        var objects = null
-        if (this.state.data instanceof Array) {
-            objects = this.state.data.map((data) => {
+            var objects = this.state.data.map((data) => {
                 return (
-                    <CardGroup>
-                        <Link to={'/products/p/' + data.slug}>
-                            <Card hoverable>
-                                <Card.Body>
-                                    <div className="imgcontainer">
-                                        <Card.Img variant="top" src={data.productPic[0].img} />  </div>
-                                    <Card.Title>{data.name}</Card.Title>
-                                    <Card.Text>{data.price} zł</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Link>
-                    </CardGroup>
+                    <SimpleSingleProudct data={data}/>
                 )
             }
             )
@@ -47,28 +37,30 @@ class Products extends React.Component {
                 {objects}
             </div>)
 
-        } else {
-            const data = this.state.data
-            // to jest pojedynczy produkt
-            return (
-                <Card hoverable>
-                    <Card.Body>
-                        <div className="imgcontainer">
-                        <Card.Img variant="top" src={data.productPic[0].img} />  </div>
-                        <Card.Title>{data.name}</Card.Title>
-                        <Card.Text>{data.description}</Card.Text>
-                        <Card.Text>Stan magazynowy {data.stock} sztuk</Card.Text>
-                        <Card.Text>{data.price} zł</Card.Text>
-                    </Card.Body>
-                </Card>
-            )
-        }
 
-    }
-    open(id) {
-        console.log(id);
+
     }
 }
 
+
+
+const SimpleSingleProudct = props => {
+    const data = props.data;
+    return (
+    <CardGroup>
+            <Link to={'/products/p/' + data.slug}>
+                <Card hoverable>
+                    <Card.Body>
+                        <div className="imgcontainer">
+                        <Card.Img variant="top" src={data.productPic[0].img} /> 
+                         </div>
+                        <Card.Title>{data.name}</Card.Title>
+                        <Card.Text>{data.price} zł</Card.Text>
+                    </Card.Body>
+                </Card>
+            </Link>
+      </CardGroup>
+    )
+}
 
 export default Products
