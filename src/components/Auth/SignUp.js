@@ -136,7 +136,7 @@ class SignUp extends Component {
                     </label>
                     <button>  Zarejestruj sie </button>
                   </form>
-                  {this.state.message && <h3>{this.state.message}</h3>}
+                  {this.state.message && <p2>{this.state.message}</p2>}
                   </div>
 
                 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
 import './Toolbar.css';
 import DrawerButton from '../SideDrawer/DrawerButton';
@@ -6,20 +6,22 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { faHome, faShoppingCart, faUser, faUserPlus, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Toolbar = props => {
+class Toolbar extends Component {
+
+  render() {
   return (
     <Container>
       <Row>
         <header className="toolbar">
           <nav className="toolbar_nav">
             <div className="toolbar_button">
-              <DrawerButton click={props.clickHandler} />
+              <DrawerButton click={this.props.clickHandler} />
             </div>
             <Col>
               <div className="toolbar_nav-items">
                 <ul id="navigation">
-                  <li><NavLink to="/" exact> <FontAwesomeIcon icon={faHome} /> </NavLink></li>
-                  <li> <NavLink to="/products"> Produkty</NavLink> </li>
+                  <li><a href="/"> <FontAwesomeIcon icon={faHome} /> </a></li>
+                  <li> <a href="/products"> Produkty</a> </li>
                   <ul className="dropdown">
                     <li> Kategorie
 
@@ -45,16 +47,13 @@ const Toolbar = props => {
 
 
                   </ul>
-
-
-                  <li><NavLink to="/promotions"> Promocje </NavLink></li>
                 </ul>
 
               </div>
             </Col>
             <div className="toolbar_nav-items-right" >
               <Col xs lg="1">
-                <ToolbarRight cookies={props.cookies} />
+                <ToolbarRight cookies={this.props.cookies} />
               </Col>
             </div>
 
@@ -67,7 +66,7 @@ const Toolbar = props => {
 
   );
 };
-
+}
 const ToolbarRight = props => {
   if (props.cookies.get("token")) {
     return (
@@ -101,10 +100,17 @@ const CartToolbar = props => {
     cartAmount = JSON.parse(localStorage.getItem('cart')).length
   }
   return (
+    <div className="cartit">
+      <ul>
+      <li>
     <NavLink to="/cart">
-      <FontAwesomeIcon icon={faShoppingCart} />
-      {cartAmount}
+    <FontAwesomeIcon icon={faShoppingCart}> </FontAwesomeIcon> 
     </NavLink>
+    </li>
+    <li>
+    <sup>{cartAmount}</sup></li>
+    </ul>
+    </div>
   )
 }
 

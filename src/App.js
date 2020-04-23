@@ -4,17 +4,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container} from 'react-bootstrap';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import MainMiddleComponent from './components/MainMiddleComponent/MainMiddleComponent';
 import Footer from './components/Footer/Footer';
-import { CookiesProvider, withCookies} from 'react-cookie';
+import { CookiesProvider, withCookies } from 'react-cookie';
 class App extends Component {
+
   state = {
-    sideDrawerOpen: false,
-  };
+    sideDrawerOpen: false,  };
 
   sideDrawerHandler = () => {
     this.setState((prevState) => {
@@ -44,7 +45,13 @@ class App extends Component {
             <SideDrawer show={this.state.sideDrawerOpen} cookies={this.props.cookies} />
             {backdrop}
             <MainMiddleComponent cookies={this.props.cookies} />
-            <Footer />
+
+            <Container className="Footer-items">
+            <div className="FooterFlex">
+              <Footer />
+              </div>
+            </Container>
+
           </Router>
         </MuiThemeProvider>
       </CookiesProvider>

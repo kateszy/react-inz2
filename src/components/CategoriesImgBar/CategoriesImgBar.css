@@ -2,9 +2,10 @@
     top:0;
     max-width: 100%;
     min-width: 100%;
-    padding: 0px;
+    padding: 0px!important;
     margin: 0px;   
     overflow: hidden; 
+
     
 }
 

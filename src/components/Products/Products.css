@@ -1,21 +1,26 @@
 .product{
     text-align: center;
- 
+    padding-top:100px;
 }
 
 .card{
-    border: none;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    border: none;   
+    padding-bottom: 20px;
    
 }
 
 .card-group{
   display: inline-table;
+  width: 55vh;
+  height: 60vh;
+}
+
+.card-group-single{
+    padding-bottom: 20px;
 }
 .imgcontainer{
-    width:  55vh;    
-    height: 60vh; 
+    width:  45vh;    
+    height: 50vh; 
     
     
 }

@@ -1,0 +1,12 @@
+.EmptyCart{
+
+    height:80vh;
+    text-align: center;   
+    padding-top: 30vh;
+}
+
+.EmptyCart p{
+   
+    font-size: 30px;
+
+}

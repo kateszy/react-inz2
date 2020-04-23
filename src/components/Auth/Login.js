@@ -14,6 +14,7 @@ class Login extends Component {
       server: false,
     }
   }
+  
   componentWillMount(){
     const token = this.props.cookies.get("token")
     if(token){

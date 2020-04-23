@@ -1,0 +1,12 @@
+.ErrorPage{
+
+    height:80vh;
+    text-align: center;   
+    padding-top: 30vh;
+}
+
+.ErrorPage p,img{
+   
+    font-size: 30px;
+
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap'
+import './Products.css';
 
 class Product extends React.Component {
 
@@ -51,7 +52,10 @@ class SingleProduct extends React.Component {
         const data = this.props.data;
         if (data) {
             return (
+                <div className="product">
+                    
                 <Container>
+                    <div className="card-group-single">
                     <Row>
                         <Col>
 
@@ -76,8 +80,9 @@ class SingleProduct extends React.Component {
 
                         </Col>
                     </Row>
-
+                    </div>
                 </Container>
+                </div>
             )
         } else {
             return (

@@ -20,7 +20,7 @@ const SideDrawer = props => {
         <li><a href="/products/shoes"> Koszulki </a></li>
         <li><a href="/products/trousers"> Spodnie </a></li>
         <li><a href="/products/tshirts"> Bluzy</a></li>
-        <li><a href="/promotions"> Promocje </a></li>
+       
         <DynamicLoggedComponent cookies={props.cookies} />
 
       </ul>
@@ -53,7 +53,7 @@ const DynamicLoggedComponent = props => {
         <li><a href="/signup">
           <FontAwesomeIcon icon={faUserPlus} />Rejestracja
         </a></li>
-        <li><a href="/card">
+        <li><a href="/cart">
           <FontAwesomeIcon icon={faShoppingCart} />Koszyk
         </a></li>
       </div>
