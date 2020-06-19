@@ -18,11 +18,8 @@ import infinity from '../images/infinity.jpg';
 
 
 const Home = props => {
-
     return (
-
-        <div>
-
+            <div>
             <Container className="mw100">
                 <div className="Catflex">
                     <CategoriesImgBar
@@ -45,49 +42,28 @@ const Home = props => {
                         image={g1}
                         header="Bluzy "
                     />
-
-
-
-
                 </div>
-
-
             </Container>
-
-
             <Container className="Promo">
                 <div className="Promoflex">
-
-
                     <PromoBar
                         icon={faCoins}
                         header="Program lojalnościowy"
-                        paragraph=" SuperClub to nasz program lojalnościowy! Skontaktuj sie z nami mailowo "
-
-                    />
+                        paragraph=" SuperClub to nasz program lojalnościowy! Skontaktuj sie z nami mailowo "/>
                     <PromoBar
                         icon={faTruck}
                         header="Darmowa wysyłka w 24H"
-                        paragraph=" Do wszystkich zamówień oferujemy wysyłkę kurierem GRATIS w ciągu 24h. "
-
-                    />
+                        paragraph=" Do wszystkich zamówień oferujemy wysyłkę kurierem GRATIS w ciągu 24h. "/>
                     <PromoBar
                         icon={faTags}
                         header="Gwarancja najniższej ceny!"
-                        paragraph=" Jeśli udałoby Ci się znaleźć dokładnie ten sam produkt w innym sklepie, w niższej cenie - obniżymy jego cenę! "
-
-                    />
+                        paragraph=" Jeśli udałoby Ci się znaleźć dokładnie ten sam produkt w innym sklepie, 
+                        w niższej cenie - obniżymy jego cenę! "/>
                     <PromoBar
                         icon={faUndo}
                         header="14 dni na zwrot zakupów"
-                        paragraph=" Na zwrot zakupionych produktów masz 14 dni licząc od daty otrzymania przesyłki "
-
-                    />
-
-                </div>
-
-            </Container>
-
+                        paragraph=" Na zwrot zakupionych produktów masz 14 dni licząc od daty otrzymania przesyłki "/>
+                </div></Container>
             <Container className="Brands">
                 <div className="Brandsflex">
                     <BrandsBar
@@ -114,25 +90,9 @@ const Home = props => {
                         link="/products"
                         image={infinity}
                     />
-
-
-
                 </div>
             </Container>
-
-
-
-            <IgSlider />
-
-        </div>
-
-    );
-
-
-};
-
-
-
+            <IgSlider />  </div> );};
 export default Home;
 
 

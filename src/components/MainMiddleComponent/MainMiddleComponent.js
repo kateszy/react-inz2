@@ -27,9 +27,6 @@ const MainMiddleComponent = props => {
       </Switch>
     );
 };
-
-
-
 export default MainMiddleComponent;
 
 

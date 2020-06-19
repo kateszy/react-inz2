@@ -21,7 +21,7 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        var cart = JSON.parse(localStorage.getItem('cart'));
+        let cart = JSON.parse(localStorage.getItem('cart'));
         if (cart != null) {
             cart.forEach(slug => this.loadData(slug))
         }
@@ -80,58 +80,58 @@ class Cart extends React.Component {
 
         var cart = JSON.parse(localStorage.getItem('cart'));
         if (cart != null && cart.length > 0) {
-                return (
-                    <div className="objects">
-                        <Row>
-                            <Col>
-                                <div>
-                                    {objects}
-                                </div>
-                            </Col>
-                            <Col>
-                                <Form noValidate onSubmit={this.goToSummary}>
-                                    <Form.Group controlId="formName">
-                                        <Form.Label>Imie i nazwisko </Form.Label>
-                                        <Form.Control type="text" placeholder="Wpisz imie i nazwisko"
-                                            name="name" onChange={this.handleChange} />
-                                    </Form.Group>
-                                    <Form.Group controlId="formStreet">
-                                        <Form.Label>Ulica i numer domu</Form.Label>
-                                        <Form.Control type="text" placeholder="Wpisz ulice i numer domu"
-                                            name="street" onChange={this.handleChange} />
-                                    </Form.Group>
-                                    <Form.Row>
-                                        <Col>
-                                            <Form.Group controlId="formCity">
-                                                <Form.Label>Miasto </Form.Label>
-                                                <Form.Control type="text" placeholder="Wpisz miasto"
-                                                    name="city" onChange={this.handleChange} />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <Form.Group controlId="formPostCode">
-                                                <Form.Label>Kod pocztowy </Form.Label>
-                                                <Form.Control type="text" placeholder="Wpisz kod pocztowy"
-                                                    name="zipcode" onChange={this.handleChange} />
-                                            </Form.Group>
-                                        </Col>
-                                    </Form.Row>
-                                    <Form.Row>
-                                        <Col>
-                                            <div className="sum">
-                                                <p>Do zapłaty: {this.sumPrice()} zł</p>
-                                            </div>
-                                        </Col>
-                                        <Col>
-                                            <button type="submit">Dalej</button>
-                                        </Col>
-                                    </Form.Row>
-                                </Form>
-                            </Col>
-                        </Row>
-                    </div>
-                )
-            }
+            return (
+                <div className="objects">
+                    <Row>
+                        <Col>
+                            <div>
+                                {objects}
+                            </div>
+                        </Col>
+                        <Col>
+                            <Form noValidate onSubmit={this.goToSummary}>
+                                <Form.Group controlId="formName">
+                                    <Form.Label>Imie i nazwisko </Form.Label>
+                                    <Form.Control type="text" placeholder="Wpisz imie i nazwisko"
+                                        name="name" onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="formStreet">
+                                    <Form.Label>Ulica i numer domu</Form.Label>
+                                    <Form.Control type="text" placeholder="Wpisz ulice i numer domu"
+                                        name="street" onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Row>
+                                    <Col>
+                                        <Form.Group controlId="formCity">
+                                            <Form.Label>Miasto </Form.Label>
+                                            <Form.Control type="text" placeholder="Wpisz miasto"
+                                                name="city" onChange={this.handleChange} />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group controlId="formPostCode">
+                                            <Form.Label>Kod pocztowy </Form.Label>
+                                            <Form.Control type="text" placeholder="Wpisz kod pocztowy"
+                                                name="zipcode" onChange={this.handleChange} />
+                                        </Form.Group>
+                                    </Col>
+                                </Form.Row>
+                                <Form.Row>
+                                    <Col>
+                                        <div className="sum">
+                                            <p>Do zapłaty: {this.sumPrice()} zł</p>
+                                        </div>
+                                    </Col>
+                                    <Col>
+                                        <button type="submit">Dalej</button>
+                                    </Col>
+                                </Form.Row>
+                            </Form>
+                        </Col>
+                    </Row>
+                </div>
+            )
+        }
         else {
             return (
                 <EmptyCart />
@@ -168,23 +168,18 @@ const CartProduct = props => {
                 <div className="singleproductcart">
 
                     <Card.Body>
-
                         <Row>
                             <Col>
                                 <div className="imgcontainercart">
                                     <Card.Img variant="top" src={data.productPic[0].img} />
                                 </div>
                             </Col>
-
                             <Col>
                                 <Card.Title>{data.name}</Card.Title>
                                 <Card.Text>{data.price} zł</Card.Text>
                             </Col>
-
                             <Col><button onClick={() => deleteFromCart(data.slug)}>Usun</button></Col>
-
                         </Row>
-
                     </Card.Body>
 
                 </div>

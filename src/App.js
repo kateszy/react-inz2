@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
@@ -13,26 +13,20 @@ import MainMiddleComponent from './components/MainMiddleComponent/MainMiddleComp
 import Footer from './components/Footer/Footer';
 import { CookiesProvider, withCookies } from 'react-cookie';
 class App extends Component {
-
   state = {
-    sideDrawerOpen: false,  };
-
+    sideDrawerOpen: false,
+  };
   sideDrawerHandler = () => {
     this.setState((prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };
 
     });
-
   };
-
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false });
-
-
   }
   render() {
     let backdrop;
-
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
@@ -47,8 +41,8 @@ class App extends Component {
             <MainMiddleComponent cookies={this.props.cookies} />
 
             <Container className="Footer-items">
-            <div className="FooterFlex">
-              <Footer />
+              <div className="FooterFlex">
+                <Footer />
               </div>
             </Container>
 
